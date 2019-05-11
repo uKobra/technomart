@@ -66,7 +66,7 @@ input[type="radio"].visually-hidden {
   background-color: #ba2732;
 }
 
-/* Header */
+/* HEADER */
 
 .header-top_wrap {
   width: 100%;
@@ -506,14 +506,229 @@ input[type="radio"].visually-hidden {
   border-radius: 50%;
 }
 
+/* FOOTER */
+
+.main-footer {
+  background-color: #32425c;
+  margin-top: 85px;
+}
+
+.bottom-wrap {
+  padding-bottom: 30px;
+
+  background-color: #293449;
+}
+
+.logo-bottom {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  margin-right: 100px;
+  padding: 18px 0 15px;
+  background-color: #ee3643;
+  border-radius: 0;
+  box-shadow: 0 5px 0 0 #b52933
+}
+
+.footer-navigation,
+.catalog-navigation {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.catalog-navigation {
+  margin-top: 16px;
+  margin-left: 23px;
+}
+
+.main-footer .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-contacts {
+  font: normal 18px/24px "Cuprum", "Tahoma", sans-serif;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+
+  margin-top: 33px;
+  margin-bottom: 50px;
+  padding-left: 3px;
+}
+
+.bottom-navigation {
+  margin-top: 20px;
+  margin-left: auto;
+}
+
+.footer-nav-link {
+  font: 18px/24px "Cuprum", "Tahoma", sans-serif;
+  color: #ffffff;
+}
+
+.catalog-nav-link {
+  font: 18px/24px "Cuprum", "Tahoma", sans-serif;
+  color: #ffd180;
+}
+
+.footer-navigation li,
+.catalog-navigation li {
+  padding: 18px 0 0;
+}
+
+.footer-navigation li:not(:first-child),
+.catalog-navigation li:not(:first-child) {
+  padding-left: 59px;
+}
+
+.footer-nav-link:hover,
+.footer-nav-link:focus,
+.catalog-nav-link:hover,
+.catalog-nav-link:focus {
+  text-decoration: underline;
+}
+
+.footer-nav-link:active,
+.catalog-nav-link:active {
+  text-decoration: none;
+
+  opacity: 0.5;
+}
+
+.footer-nav-link:not([href]):hover,
+.footer-nav-link:not([href]):focus,
+.footer-nav-link:not([href]):active {
+  text-decoration: none;
+  opacity: 1;
+}
+
+.copyright,
+.feedback,
+.developed {
+  margin: 0;
+  padding: 0;
+
+  font: 16px/18px "Cuprum", "Tahoma", sans-serif;
+  color: #ffffff;
+}
+
+.copyright {
+  margin-top: 37px;
+  margin-right: 167px;
+}
+
+.footer-bottom-right {
+  display: flex;
+  margin-left: auto;
+  margin-top: 38px;
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  width: 130px;
+  list-style: none;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  margin-top: 35px;
+
+  background-color: #212a3a;
+}
+
+.social-button:hover,
+.social-button:focus,
+.social-button:active {
+  background-color: #ee3643;
+}
+
+.footer-feedback a,
+.footer-develop a {
+  color: #ffd180;
+}
+
+.footer-develop {
+  margin-right: 8px;
+  margin-left: 43px;
+}
+
+.footer-feedback a:hover,
+.footer-feedback a:focus,
+.footer-develop a:hover,
+.footer-develop a:focus {
+  text-decoration: underline;
+}
+
+.footer-feedback a:active,
+.footer-develop a:active {
+  color: #ee3643;
+  text-decoration: none;
+}
+
+/* MAIN */
 
 
 
 
 
 
+/* CATALOG */
 
-/* Modal */
+.catalog .main-footer {
+  margin-top: 0;
+}
+
+.about-wrap {
+  background-color: #f2f6f8;
+}
+
+.about-perforators {
+  margin-top: 60px;
+}
+
+.about-perforators h2,
+.about-perforators p {
+  margin: 0;
+  padding: 0;
+}
+
+.about-perforators h2 {
+  font: 400 30px/30px "Cuprum", "Tahoma", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+
+  padding-top: 64px;
+  padding-bottom: 26px;
+}
+
+.about-perforators p {
+  font: normal 400 13px/24px "PT Sans", "Calibri", sans-serif;
+  color: #000000;
+
+  padding-bottom: 70px;
+}
+
+
+
+/* MODAL */
 
 .modal {
   display: none;
