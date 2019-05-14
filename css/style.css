@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
 
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Tahoma", sans-serif;
   font-size: 17px;
   line-height: 17px;
   font-weight: 400;
@@ -692,6 +692,613 @@ input[type="radio"].visually-hidden {
 
 /* CATALOG */
 
+.breadcrumbs {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs a,
+.breadcrumbs-current {
+  font: 13px/18px "PT Sans", "Calibri", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.breadcrumbs li:first-child {
+  display: block;
+  padding-top: 2px;
+  margin-left: -2px;
+  margin-right: 40px;
+}
+
+.breadcrumbs li:nth-child(3) {
+  margin-left: 42px;
+  margin-right: 42px;
+}
+
+.breadcrumbs li {
+  position: relative;
+  margin-top: 21px;
+}
+
+.breadcrumbs li:not(:first-child)::before {
+  content: "";
+
+  position: absolute;
+  top: 3px;
+  left: -25px;
+
+  width: 8px;
+  height: 12px;
+
+  background-image: url("../img/svg/icon-right-small.svg");
+}
+
+.catalog-title {
+  font: 30px/30px "Cuprum", "Tahoma", sans-serif;
+  color: #32425c;
+  text-transform: uppercase;
+
+  padding: 29px 20px 30px 28px;
+
+  background-color: #f2f6f8;
+}
+
+.catalog-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters {
+  width: 220px;
+}
+
+.filter h2 {
+  font: 13px/18px "PT Sans", "Calibri", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+
+  margin: 0;
+  padding: 0;
+  margin-bottom: 11px;
+  padding: 10px 20px;
+  border-radius: 2px; 
+
+  background-color: #f7f3ec;
+}
+
+.filter-price,
+.filter-group {
+  margin: 0;
+  padding: 0;
+  border: none;
+  margin-bottom: 17px;
+}
+
+.filter-price,
+.filter-group {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.filter-group:last-of-type {
+  border-bottom: 0;
+}
+
+.filter-price legend {
+  font: bold 17px/30px "PT Sans", "Calibri", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+
+  margin: 0;
+  padding: 0;
+}
+
+.filter-range {
+  width: 220px;
+}
+
+.range-controls {
+  position: relative;
+
+  height: 41px;
+  margin-top: 14px;
+  margin-bottom: 9px;
+  padding-top: 39px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #f7f3ec;
+  border-radius: 2px;
+}
+
+.range-controls .scale {
+  height: 2px;
+  background: #d7dcde;
+}
+
+.range-controls .bar {
+  width: 80%;
+  height: 2px;
+  background: #00ca74;
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 31px;
+  left: 0;
+
+  width: 4px;
+  height: 4px;
+  padding: 0;
+
+  border: 8px solid #ffffff;
+  background-color: #ababab;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range-controls .toggle-min {
+  left: 20px;
+}
+
+.range-controls .toggle-max {
+  left: 160px;
+}
+
+.price-controls input {
+  width: 95px;
+  padding: 10px 0;
+
+  font: 17px/18px "PT Sans", "Calibri", sans-serif;
+  color: #000000;
+  text-align: center;
+
+  border: none;
+  border-radius: 2px;
+  background: #f7f3ec;
+}
+
+.min-price {
+  margin-right: 25px;
+}
+
+.price-controls {
+  position: relative;
+}
+
+.price-controls::after {
+  content: "";
+  height: 1.5px;
+  width: 14px;
+  margin: -1px 0 0 -8px;
+  background: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.filter-group legend {
+  font: bold 17px/30px "PT Sans", "Calibri", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.filter ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.filter-group li {
+  margin-bottom: 20px;
+  padding-left: 34px;
+}
+
+.filter-group li:last-child {
+  margin-bottom: -2px;
+}
+
+.filter-group label {
+  font: 15px/20px "PT Sans", "Calibri", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.filter-option label {
+  position: relative;
+
+  display: block;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-input-checkbox + label::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -34px;
+
+  width: 25px;
+  height: 25px;
+
+  background: url("../img/svg/checkbox-off.svg") 0 0 no-repeat;
+  opacity: 0.4;
+}
+
+.filter-input-checkbox:checked + label::before {
+  background: url("../img/svg/checkbox-on.svg") 0 0 no-repeat;
+  opacity: 0.4;
+}
+
+.filter-input-checkbox + label:hover::before {
+  opacity: 1;
+}
+
+
+.filter-input-radio + label:hover::before {
+  opacity: 1;;
+}
+
+.filter-input-radio + label::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -34px;
+
+  width: 25px;
+  height: 25px;
+
+  background: url("../img/svg/radio-off.svg") 0 0 no-repeat;
+  opacity: 0.4;
+}
+
+.filter-input-radio:checked + label::before {
+  background: url("../img/svg/radio-on.svg") 0 0 no-repeat;
+  opacity: 0.4;
+}
+
+.filter-input-radio + label:hover::before {
+  opacity: 1;;
+}
+
+.filter-send {
+  display: block;
+  margin: 55px 0 0;
+  padding: 9px 38px;
+
+  font: 13px/18px "PT Sans", "Calibri", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.filter-send:hover,
+.filter-send:focus {
+  border-color: #bdc6ca;
+}
+
+.products {
+  width: 700px;
+}
+
+.sorting {
+  display: flex;
+  padding: 10px 10px 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  background-color: #f7f3ec;
+}
+
+.sorting h2 {
+  font: 13px/18px "PT Sans", "Calibri", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+
+  margin: 0;
+  padding: 0;
+  margin-right: 140px;
+}
+
+.sorting ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sort-parameters,
+.sort-order {
+  display: flex;
+}
+
+.sort-item a {
+  font: 13px/18px "PT Sans", "Calibri", sans-serif;
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  border-bottom: 1px dotted #ee3643;
+}
+
+.sort-item:last-child {
+  margin-left: 65px;
+  margin-right: 45px;
+}
+
+.sort-item .current-link {
+  color: #ee3643;
+  border-bottom: 0;
+  margin-right: 70px;
+}
+
+.sort-item a:hover,
+.sort-item a:focus {
+  color: #000000;
+  border-bottom: 1px solid #ee3643;
+}
+
+.sort-parameters:last-child a {
+  margin-left: 30px;
+}
+
+.sort-order-current {
+  margin-right: 21px;
+}
+
+.sort-order-up path {
+  fill: #ee3643;
+}
+
+.sort-order-down path {
+  fill-opacity: 0.3;
+}
+
+.sort-order-item:hover path,
+.sort-order-item:focus path {
+  fill: #000000;
+  fill-opacity: 1;
+}
+
+.catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 700px;
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.catalog-item {
+  position: relative;
+
+  width: 220px;
+  margin-bottom: 20px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+.catalog-item h3 {
+  font: bold 18px/20px "PT Sans", "Calibri", sans-serif;
+  color: #000000;
+  margin: 8px 0 12px 0;
+  padding: 0 25px;
+}
+
+.catalog-item:nth-child(3n) h3 {
+  margin-bottom: 40px;
+}
+
+.catalog-item img {
+  max-width: 100%;
+  
+  margin-top: 7px;
+}
+
+.catalog-item .old-price {
+  font: bold 17px/18px "PT Sans", "Calibri", sans-serif;
+  color: #999999;
+  text-decoration: line-through;
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-item .price {
+  position: relative;
+
+  font: bold 17px/18px "PT Sans", "Calibri", sans-serif;
+  color: #ffffff;
+
+  display: block;
+  width: 120px;
+  margin: 10px auto 20px auto;
+  padding: 10px 10px;
+
+  background-color: #ee3643;
+  border-radius: 3px;
+}
+
+.catalog-item .buy,
+.catalog-item .bookmark {
+  display: block;
+  width: 130px;
+  margin: 0 auto 8px auto;
+  padding: 8px 0;
+}
+
+.catalog-item .buy {
+  position: relative;
+
+  font: 14px/18px "Cuprum", "Tahoma", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #63a63e;
+  border: 2px solid #63a63e;
+  border-bottom-color: #367315;
+  border-radius: 2px;
+}
+
+.catalog-item .buy::before {
+  content: "";
+
+  position: absolute;
+  left: 13px;
+  top: 9px;
+
+  width: 15px;
+  height: 15px;
+
+  background: url("../img/svg/icon-cart.svg") 0 0 no-repeat;
+  opacity: 0.3;
+}
+
+.catalog-item .buy:hover::before,
+.catalog-item .buy:focus::before,
+.catalog-item .buy:active::before {
+  opacity: 1;
+}
+
+.catalog-item .bookmark {
+  font: 14px/18px "Cuprum", "Tahoma", sans-serif;
+  color: #32425c;
+  text-transform: uppercase;
+  border: 2px solid #63a63e;
+  border-radius: 2px;
+}
+
+.catalog-item .buy:hover,
+.catalog-item .buy:focus {
+  background-color: #5fbb2d;
+  border-color: #5fbb2d;
+  border-bottom-color: #367315;
+}
+
+.catalog-item .buy:active {
+  background-color: #518534;
+  border-color: #518534;
+}
+
+.catalog-item .bookmark:hover,
+.catalog-item .bookmark:focus {
+  border-color: #32425c;
+}
+
+.catalog-item .bookmark:active {
+  opacity: 0.3;
+}
+
+.catalog-item .price:after{
+  content:"";
+  position:absolute;
+  top: 0;
+  right: -20px;
+  width: 0;
+  height: 0;
+  border: 19px solid white;
+  border-left-color: #ee3643;
+}
+
+.catalog-item .actions {
+  height: 127px;
+  margin-top: 43px;
+}
+
+.catalog-item .actions,
+.catalog-item:hover img {
+  display: none;
+}
+
+.catalog-item:hover .actions {
+  display: block;
+  order: -1;
+}
+
+.catalog-item:hover,
+.catalog-item:focus {
+  box-shadow: 0 10px 25px 0 rgba(41, 52, 73, 0.5);
+}
+
+.flag-new {
+  position: relative;
+}
+
+.flag-new::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  background: url("../img/new-flag.png") no-repeat 0 0;
+}
+
+.pagination-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination-item {
+  font: 13px/18px "PT Sans", "Calibri", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+
+  display: block;
+  padding: 9px 15px 10px 15px;
+  margin-right: 10px;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+}
+
+.pagination-next {
+  padding: 10px 30px;
+}
+
+.pagination-item:hover,
+.pagination-item:focus {
+  border-color: #bdc6ca;
+}
+
+.pagination-item:active {
+  border-color: #ee3643;
+}
+
+.pagination-item-current,
+.pagination-item-current:hover,
+.pagination-item-current:focus,
+.pagination-item-current:active {
+  color: #ffffff;
+  background-color: #ee3643;
+  border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .catalog .main-footer {
   margin-top: 0;
 }
@@ -728,8 +1335,115 @@ input[type="radio"].visually-hidden {
 
 
 
-/* MODAL */
+/* POPUP */
 
 .modal {
   display: none;
+}
+
+.popup {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 100;
+
+  display: none;
+  width: 620px;
+  padding: 45px 0 0;
+
+  background: #ffffff;
+  border-top: 7px solid #ff5257;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
+
+  transform: translate(-50%, -50%);
+}
+
+.popup-show {
+  display: block;
+
+  animation-name: appearance;
+  animation-duration: 0.8s;
+}
+
+.popup-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 37px 80px;
+
+  background-color: #f4f4f4;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 21px;
+  height: 21px;
+
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+}
+
+.popup-close::before,
+.popup-close::after {
+  content: "";
+
+  position: absolute;
+  left: -3px;
+  top: 8px;
+
+  width: 27px;
+  height: 5px;
+
+  background-color: #ee3643;
+
+  transform: rotate(45deg);
+}
+
+.popup-close::after {
+  transform: rotate(-45deg);
+}
+
+.item-in-cart p {
+  position: relative;
+
+  margin: 20px 80px 70px;
+  padding-left: 97px;
+
+  font: 30px/30px "Cuprum", "Tahoma", sans-serif;
+  color: #000000;
+}
+
+.item-in-cart p::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: -50%;
+
+  width: 66px;
+  height: 66px;
+
+  background: url("../img/svg/icon-mark.svg") 0 0 no-repeat;
+}
+
+.issue-order {
+  padding: 10px 53px;
+}
+
+.popup-cont {
+  display: inline-block;
+  font: 400 14px/18px "Cuprum", "Tahoma", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+
+  background-color: #ffffff;
+  padding: 10px 53px;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
 }
