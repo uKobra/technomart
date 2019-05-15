@@ -788,6 +788,7 @@ input[type="radio"].visually-hidden {
   margin: 0;
   padding: 0;
   list-style: none;
+  overflow: hidden;
 }
 
 .feature-slide h3 {
@@ -796,8 +797,8 @@ input[type="radio"].visually-hidden {
   font-weight: bold;
   text-transform: uppercase;
   color: #ffffff;
-  margin-top: 25px;
-  margin-left: 24px;
+  padding-top: 25px;
+  padding-left: 24px;
 }
 
 .feature-slide p {
@@ -821,14 +822,110 @@ input[type="radio"].visually-hidden {
 .slider-controls {
   position: absolute;
 
-  
+  left: 295px;
+  bottom: 36px;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 30px;
+  height: 10px;
 }
 
+.slider-controls-item {
+  width: 10px;
 
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 2px #ffffff;
+  border-radius: 50%;
 
+  cursor: pointer;
+}
 
+.slider-arrow {
+  position: absolute;
+  left: 0;
+  top: 105px;
+  bottom: 80px;
+  z-index: 10;
 
+  width: 72px;
 
+  cursor: pointer;
+}
+
+.slider-controls-prev {
+  left: auto;
+  right: 0;
+}
+
+.slider-controls-next::before {
+  content: "";
+
+  position: absolute;
+  top: 15px;
+  left: 30px;
+
+  width: 29px;
+  height: 29px;
+
+  border: 3px solid #ffffff;
+  border-top: 0;
+  border-right: 0;
+
+  transform: rotate(45deg);
+}
+
+.slider-controls-prev::before {
+  content: "";
+
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  width: 29px;
+  height: 29px;
+
+  border: 3px solid #ffffff;
+  border-top: 0;
+  border-right: 0;
+
+  transform: rotate(225deg);
+}
+
+.feature-slide {
+  width: 620px;
+  height: 266px;
+  display: none;
+}
+
+.feature-slide:nth-child(1) {
+  background: url("../img/slide-1.jpg") 0 0 no-repeat;
+}
+
+.feature-slide:nth-child(2) {
+  background: url("../img/slide-2.jpg") 0 0 no-repeat;
+}
+
+#slide-prev:checked ~ .slider-controls-prev,
+#slide-next:checked ~ .slider-controls-next {
+  cursor: auto;
+}
+
+#slide-prev:checked ~ .slider-controls-prev::before,
+#slide-next:checked ~ .slider-controls-next::before {
+  border: none;
+}
+
+#slide-prev:checked ~ .slider-controls label:nth-child(2),
+#slide-next:checked ~ .slider-controls label:nth-child(1) {
+  background-color: #ee3643;
+}
+
+#slide-prev:checked ~ .slider-list .feature-slide:nth-child(1),
+#slide-next:checked ~ .slider-list .feature-slide:nth-child(2) {
+  display: block;
+}
 
 /* END SLIDER */
 
@@ -981,7 +1078,7 @@ input[type="radio"].visually-hidden {
 
   position: absolute;
   top: -40px;
-  right: 0;
+  left: 230px;
 
   width: 10px;
   height: 279px;
@@ -1767,10 +1864,6 @@ input[type="radio"].visually-hidden {
 
 /* POPUP */
 
-.modal {
-  display: none;
-}
-
 .popup {
   position: fixed;
   left: 50%;
@@ -1836,6 +1929,8 @@ input[type="radio"].visually-hidden {
   transform: rotate(-45deg);
 }
 
+/* ITEM IN CART */
+
 .item-in-cart p {
   position: relative;
 
@@ -1876,4 +1971,100 @@ input[type="radio"].visually-hidden {
   border: 0;
   border-radius: 2px;
   cursor: pointer;
+}
+
+/* MAP */
+
+.popup-map {
+  width: 940px;
+  height: 446px;
+  padding: 0;
+
+  border-top: none;
+  box-shadow: 0 0 16px 8px rgba(47, 42, 43, 0.5);
+}
+
+.map-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border: 0;
+}
+
+/* WRITE US */
+
+.popup-write-us {
+  padding-top: 25px;
+}
+
+.popup label {
+  margin-bottom: 18px;
+
+  font-size: 18px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.fields-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 460px;
+  padding: 20px 80px;
+}
+
+.write-form .name,
+.write-form .email {
+  width: 220px;
+}
+
+.write-form input[type="text"],
+.write-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 10px;
+  padding: 9px;
+
+  font: 13px/18px "PT Sans", "Calibri", sans-serif;
+  
+  border: 2px solid #dee3e4;
+  border-radius: 2px;
+}
+
+.write-form input[type="text"] {
+  width: 100%;
+}
+
+.write-form input::placeholder {
+  color: #a9a9a9;
+  opacity: 1;
+}
+
+.write-form input:hover,
+.write-form textarea:hover {
+  border-color: #b5b5b5;
+}
+
+.write-form input:focus,
+.write-form textarea:focus {
+  border-color: #ee3643;
+}
+
+.write-form textarea {
+  width: 460px;
+  height: 114px;
+  resize: none;
+}
+
+.popup-footer {
+  padding: 37px 80px;
+
+  background-color: #f4f4f4;
+}
+
+.btn-send {
+  width: 460px;
+  padding: 10px 0;
+  border: 0;
 }
